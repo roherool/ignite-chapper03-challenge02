@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
+/* eslint-disable react/no-danger */
 import { FiCalendar, FiClock, FiUser } from 'react-icons/fi';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
@@ -88,10 +91,10 @@ export default function Post({
   let editionDate;
   if (isPostEdited) {
     editionDate = format(
-      new Date(post.last_publication_date),
+      new Date(post?.last_publication_date),
       "'* editado em' dd MMM yyyy', às' H':'m",
-      {
-        locale: ptBR,
+      { 
+        locale: ptBR 
       }
     );
   }
@@ -163,7 +166,7 @@ export default function Post({
 
         {preview && (
           <aside>
-            <Link href="/api/exit-preview">
+            <Link href="/services/api/exit-preview">
               <a className={commonStyles.preview}>Sair do modo Preview</a>
             </Link>
           </aside>

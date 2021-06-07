@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import Prismic from '@prismicio/client';
 import { Document } from '@prismicio/client/types/documents';
 
@@ -33,7 +35,7 @@ const Preview = async (req, res) => {
     .resolve(linkResolver, '/');
 
   if (!redirectUrl) {
-    return res.status(401).json({ message: 'Invalid token' });
+    return res.status(401).json({ message: 'Senha inválida' });
   }
 
   res.setPreviewData({ ref });
